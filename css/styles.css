@@ -1,0 +1,13 @@
+
+.lead {
+  max-width: 600px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 576px) {
+  .jumbotron {
+      padding: 2rem 2rem;
+  }
+}
