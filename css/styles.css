@@ -10,13 +10,22 @@
     url("../fonts/graphikregular.woff2") format("woff2"); /* Modern Browsers */
   font-weight: normal;
   font-style: normal;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
 }
 body {
   font-family: 'Graphik Regular';
 }
-h1, h2, h3, h4, h5 {
-  font-family: 'Graphik Regular';
-  font-weight: bold;
+
+h1 {
+   color: #101010;
+    font-size: 32px;
+    line-height: 50px;
+}
+.hero {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 500px;
 }
 .lead {
   max-width: 600px;
