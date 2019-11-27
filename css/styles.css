@@ -11,9 +11,12 @@
   font-weight: normal;
   font-style: normal;
 }
-
 body {
   font-family: 'Graphik Regular';
+}
+h1, h2, h3, h4, h5 {
+  font-family: 'Graphik Regular';
+  font-weight: bold;
 }
 .lead {
   max-width: 600px;
