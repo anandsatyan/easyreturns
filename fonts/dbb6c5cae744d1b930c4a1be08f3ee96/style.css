@@ -1,6 +1,6 @@
-
+/* font converted using font-converter.net. thank you! */
 @font-face {
-  font-family: 'Graphik Regular';
+  font-family: "bdd23cd7747541dbaea1ce2d2aaced38";
   src: url("./fonts/graphikregular.eot"); /* IE9 Compat Modes */
   src: url("./fonts/graphikregular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
     url("./fonts/graphikregular.otf") format("opentype"), /* Open Type Font */
@@ -10,20 +10,4 @@
     url("./fonts/graphikregular.woff2") format("woff2"); /* Modern Browsers */
   font-weight: normal;
   font-style: normal;
-}
-
-body {
-  font-family: 'Graphik Regular';
-}
-.lead {
-  max-width: 600px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (min-width: 576px) {
-  .jumbotron {
-      padding: 2rem 2rem;
-  }
 }
