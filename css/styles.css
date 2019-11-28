@@ -15,15 +15,12 @@
 }
 body {
   font-family: 'Graphik Regular';
+  background: #f9f9fb;
 }
 
-h1 {
-   color: #101010;
-    font-size: 32px;
-    line-height: 50px;
-}
+
 .jumbotron {
-  background: #FFFFFF;
+  background: #f9f9fb;
 }
 
 .card img {
@@ -43,18 +40,35 @@ h1 {
   margin-right: auto;
 }
 .bg-light {
-  background: #FFFFFF !important;
+  background: #f9f9fb !important;
 }
 .card {
   border: 0;
+  background-color: #f9f9fb;
 }
 .card-text {
   color:#666666;
   font-size: 0.9em;
 }
 
+.subtext {
+  margin-top: 18px;
+  font-size: 17.1px;
+  color: #101010;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 32px;
+  letter-spacing: .22px;
+}
 @media (min-width: 576px) {
   .jumbotron {
       padding: 2rem 2rem;
+  }
+  h1 {
+      color: #101010;
+      font-size: 3.5rem;
+      line-height: 4rem;
+      letter-spacing: -2px;
   }
 }
