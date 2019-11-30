@@ -56,30 +56,6 @@ h1, h2, h3, h4, h5 {
   margin-left: auto;
   margin-right: auto;
 }
-.cta {
-    min-width: 300px;
-    padding-top: 18px;
-    padding-bottom: 18px;
-    color: #fff;
-    font-size: 15.3px;
-    letter-spacing: .12px;
-    background-color: #226EF2;
-    border: none;
-    text-decoration: none;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
-    border-radius: 4px;
-    -webkit-transition: -webkit-transform .15s ease-in-out;
-    -moz-transition: -moz-transform .15s ease-in-out;
-    -o-transition: -o-transform .15s ease-in-out;
-    transition: transform .15s ease-in-out;
-    text-align: center;
-    -webkit-box-shadow: 0 5px 15px -5px rgba(0,0,0,.1);
-    -moz-box-shadow: 0 5px 15px -5px rgba(0,0,0,.1);
-    box-shadow: 0 5px 15px -5px rgba(0,0,0,.1);
-}
 .bg-light {
   background: #f9f9fb !important;
 }
@@ -93,7 +69,23 @@ h1, h2, h3, h4, h5 {
   line-height: 26px;
   margin-top:32px;
 }
-
+.btn-primary {
+  font-size: 0.9em;
+  border-radius:0;
+  margin-left: -1px;
+}
+.centered {
+  margin-left:auto;
+  margin-right:auto;
+}
+#inputEmail1 {
+  font-size: 0.9em;
+  border-radius: 0;
+}
+#result, #result2 {
+  font-weight:bold;
+  color: rgba(3, 168, 124, 1);
+}
 .subtext {
   margin-top: 18px;
   font-size: 17.1px;

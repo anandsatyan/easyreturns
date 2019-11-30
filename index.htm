@@ -5,7 +5,80 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="img/favicon.png" type="image/png" sizes="16x16">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/jquery.shake.js" ></script>
+    <script>
+    	isAdded = false;
+    	$( document ).ready(function() {
+    		$("#loader").hide();
+    		$("#btnMailMe").click(function(){
+    			if($('#inputEmail1').val().length > 5 && validateEmail('inputEmail1')) {
+	    		  $("#emailLeadForm").hide();
+	    		  $("#loader").show();
+	    		  const Url='https://script.google.com/macros/s/AKfycby2GdLbawrJYO4jLaU2qVTyCxD4oY77t5OmCjarZmbVFI94iJO3/exec?email=' + $('#inputEmail1').val() + '&status';
+				  $.post(Url, function(data, status){
+				    console.log("Successfully registered email id.");
+				    $("#result").text("Added to waiting list. You should receive a mail soon.");
+				    $("#loader").hide();
+				  });
+				}
+				else {
+					$('#emailLeadForm').shake({
+			            count: 5,
+			            distance: 10,
+			            duration: 300,
+			            vertical: true
+			        });
+				  	console.log("Erraneous email id.")
+				}
+			});
+      $("#loader2").hide();
+      $("#btnMailMe2").click(function(){
+        if($('#inputEmail2').val().length > 5 && validateEmail('inputEmail2')) {
+          $("#emailLeadForm2").hide();
+          $("#loader2").show();
+          const Url='https://script.google.com/macros/s/AKfycby2GdLbawrJYO4jLaU2qVTyCxD4oY77t5OmCjarZmbVFI94iJO3/exec?email=' + $('#inputEmail2').val() + '&status';
+        $.post(Url, function(data, status){
+          console.log("Successfully registered email id.");
+          $("#result2").text("Added to waiting list. You should receive a mail soon.");
+          $("#loader2").hide();
+        });
+      }
+      else {
+        $('#emailLeadForm2').shake({
+                count: 5,
+                distance: 10,
+                duration: 300,
+                vertical: true
+            });
+          console.log("Erraneous email id.")
+      }
+    });
+
+		});
+		function validateEmail(id)
+		{
+			  var email_regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
+			if(!email_regex.test($("#"+id).val()))
+			{
+			var div = $("#"+id).closest("div");
+			div.removeClass("has-success");
+			$("#glypcn"+id).remove();
+			div.addClass("has-error has-feedback");
+			div.append('<span id="glypcn'+id+'" class="glyphicon glyphicon-remove form-control-feedback"></span>');
+			return false;
+			}
+			else{
+			    var div = $("#"+id).closest("div");
+			    div.removeClass("has-error");
+			$("#glypcn"+id).remove();
+			div.addClass("has-success has-feedback");
+			div.append('<span id="glypcn'+id+'" class="glyphicon glyphicon-ok form-control-feedback"></span>');
+			    return true;
+			}
+		}
+  </script>
   </head>
   <body>
     <div class="herosection">
@@ -51,7 +124,16 @@
       <div class="jumbotron">
         <h1 class="text-center hero">Returns and refunds made easy.</h1>
         <div class="lead">Reduce customer enquiries, retain revenue and reduce costs with an omnichannel, AI driven and self service post purchase experience, at scale.</div>
-        <div class="text-center"><br /><a class="btn btn-primary cta" href="#" role="button">Get Started</a></div>
+        <div class="text-center"><br />
+          <form id="emailLeadForm" name="submit-to-google-sheet" _lpchecked="1">
+            <div class="input-group mb-4 col-md-4 centered">
+              <input id="inputEmail1" type="email" class="form-control" placeholder="Enter your email id" aria-label="Enter your email id">
+              <button id="btnMailMe" class="btn btn-primary input-group-append" type="button">Get Started</button><br />
+            </div>
+          </form>
+          <img src="img/loader.svg" id="loader" alt="loader" width="36px"><br />
+          <a id="result"></a>
+        </div>
       </div>
     </div><br /><br />
       <div class="container">
@@ -140,7 +222,16 @@
           <div class="col-12 col-md-12 text-center">
             <h3>Try us. Your customers will love the eReturns experience.</h3>
             Start your 21-day free trial. No credit card required. No strings attached.<br />
-            <div class="text-center"><br /><a class="btn btn-primary cta" href="#" role="button">Get Started</a></div>
+            <div class="text-center"><br />
+              <form id="emailLeadForm2" name="submit-to-google-sheet2" _lpchecked="1">
+                <div class="input-group mb-4 col-md-4 centered">
+                  <input id="inputEmail2" type="email" class="form-control" placeholder="Enter your email id" aria-label="Enter your email id">
+                  <button id="btnMailMe2" class="btn btn-primary input-group-append" type="button">Get Started</button><br />
+                </div>
+              </form>
+              <img src="img/loader.svg" id="loader2" alt="loader" width="36px"><br />
+              <a id="result2"></a>
+            </div>
           </div>
         </div>
       </div>
