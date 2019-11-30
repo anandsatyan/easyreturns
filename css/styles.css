@@ -29,7 +29,7 @@
 }
 body {
   font-family: 'Graphik Regular';
-  background: #f9f9fb;
+  background: #FFFFFF;
 }
 h1, h2, h3, h4, h5 {
   font-family: 'Sharp Grotesk';
@@ -85,7 +85,7 @@ h1, h2, h3, h4, h5 {
 }
 .card {
   border: 0;
-  background-color: #f9f9fb;
+  background-color: #FFFFFF;
 }
 .card-text {
   color:#666666;
