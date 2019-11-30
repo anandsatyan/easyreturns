@@ -13,29 +13,46 @@
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: auto;
 }
+@font-face {
+  font-family: 'Sharp Grotesk';
+  src: url("../fonts/sharp-grotesk.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/sharp-grotesk.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/sharp-grotesk.otf") format("opentype"), /* Open Type Font */
+    url("../fonts/sharp-grotesk.svg") format("svg"), /* Legacy iOS */
+    url("../fonts/sharp-grotesk.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("../fonts/sharp-grotesk.woff") format("woff"), /* Modern Browsers */
+    url("../fonts/sharp-grotesk.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+}
 body {
   font-family: 'Graphik Regular';
   background: #f9f9fb;
 }
-
+h1, h2, h3, h4, h5 {
+  font-family: 'Sharp Grotesk';
+}
 
 .jumbotron {
   background: #f9f9fb;
 }
 
 .card img {
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 20px;
 }
 .hero {
   margin-right: auto;
   margin-left: auto;
   max-width: 600px;
+  font-family: 'Sharp Grotesk';
 }
 .lead {
   max-width: 600px;
   text-align: center;
-  font-size: 0.9em;
+  font-size: 16px;
+  line-height: 26px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -72,7 +89,9 @@ body {
 }
 .card-text {
   color:#666666;
-  font-size: 0.9em;
+  font-size: 16px;
+  line-height: 26px;
+  margin-top:32px;
 }
 
 .subtext {
@@ -91,8 +110,8 @@ body {
   }
   h1 {
       color: #101010;
-      font-size: 3.5rem;
-      line-height: 4rem;
+      font-size: 2.5rem;
+      line-height: 3rem;
       letter-spacing: -2px;
   }
 }
