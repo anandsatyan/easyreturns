@@ -105,6 +105,12 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+@media (max-width:575px) {
+  .heroimg {
+    margin-top:-100px;
+  }
+}
+
 .no-pad {
   padding-right:0;
   padding-left:0;
@@ -115,4 +121,9 @@ hr{
 .loader {
   margin-left:auto;
   margin-right:auto;
+}
+.heroimg {
+  width:100%;
+  max-width:600px;
+  float:right;
 }
