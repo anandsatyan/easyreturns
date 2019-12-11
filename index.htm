@@ -2,15 +2,30 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>eReturns - Returns and refunds made easy</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="img/favicon.png" type="image/png" sizes="16x16">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/jquery.shake.js" ></script>
     <script>
     	isAdded = false;
     	$( document ).ready(function() {
+        console.log("document ready");
+        $('#inputEmail1').keypress(function(event){
+              var keycode = (event.keyCode ? event.keyCode : event.which);
+              if(keycode == '13'){
+                event.preventDefault();
+                $("#btnMailMe").click();
+              }
+          });
+        $('#inputEmail2').keypress(function(event){
+              var keycode = (event.keyCode ? event.keyCode : event.which);
+              if(keycode == '13'){
+                event.preventDefault();
+                $("#btnMailMe2").click();
+              }
+        });
     		$("#loader").hide();
     		$("#btnMailMe").click(function(){
     			if($('#inputEmail1').val().length > 5 && validateEmail('inputEmail1')) {
@@ -22,8 +37,8 @@
 				    $("#result").text("Added to waiting list. You should receive a mail soon.");
 				    $("#loader").hide();
 				  });
-				}
-				else {
+        }
+        else {
 					$('#emailLeadForm').shake({
 			            count: 5,
 			            distance: 10,
@@ -32,7 +47,7 @@
 			        });
 				  	console.log("Erraneous email id.")
 				}
-			});
+			  });
       $("#loader2").hide();
       $("#btnMailMe2").click(function(){
         if($('#inputEmail2').val().length > 5 && validateEmail('inputEmail2')) {
@@ -130,7 +145,7 @@
             <form id="emailLeadForm" name="submit-to-google-sheet" _lpchecked="1">
               <div class="input-group mb-12 col-md-12 no-pad">
                 <input id="inputEmail1" type="email" class="form-control" placeholder="Enter your email id" aria-label="Enter your email id">
-                <button id="btnMailMe" class="btn btn-primary input-group-append" type="button">Get Started</button>
+                <button id="btnMailMe" class="btn btn-primary input-group-append" type="button" value="Get Started">Get Started</button>
               </div>
             </form>
             <img src="img/loader.svg" id="loader" alt="loader" width="36px"><br />
