@@ -45,6 +45,7 @@ h1, h2, h3, h4, h5 {
 .hero {
   max-width: 400px;
   font-family: 'Sharp Grotesk';
+  font-size: 32px;
 }
 .lead {
   max-width: 400px;
