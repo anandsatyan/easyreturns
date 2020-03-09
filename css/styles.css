@@ -125,8 +125,9 @@ hr{
 }
 .heroimg {
   width:100%;
-  max-width:600px;
-  float:right;
+  max-width:500px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .highlight {
